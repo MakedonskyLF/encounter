@@ -23,7 +23,7 @@ def render(question: str):
 
 
 def find_word(*args, dictionary):
-    words=[]
+    words = []
     for case in permutations(args, len(args)):
         for test_word in product(*case):
             if ''.join(test_word) in dictionary: words.append(''.join(test_word))
