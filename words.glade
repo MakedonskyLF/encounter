@@ -16,7 +16,7 @@
       <column type="gboolean"/>
     </columns>
   </object>
-  <object class="GtkWindow">
+  <object class="GtkWindow" id="mainWin">
     <property name="can_focus">False</property>
     <child>
       <placeholder/>
@@ -98,7 +98,7 @@
                 </child>
               </object>
               <packing>
-                <property name="resize">False</property>
+                <property name="resize">True</property>
                 <property name="shrink">True</property>
               </packing>
             </child>
@@ -116,7 +116,7 @@
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">0</property>
           </packing>
