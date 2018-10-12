@@ -5,21 +5,21 @@ from itertools import product
 from itertools import permutations
 
 
-def find_letters(num: int, prefix: str, sufix: str, dictionary):
+def find_letters(num: int, prefix: str, suffix: str, dictionary):
     prefix_dict = (word for word in dictionary if (len(word) == (len(prefix) + num)) and (word.startswith(prefix)))
-    sufix_dict = set(word for word in dictionary if (len(word) == (len(sufix) + num)) and (word.endswith(sufix)))
+    suffix_dict = set(word for word in dictionary if (len(word) == (len(suffix) + num)) and (word.endswith(suffix)))
     res = set()
     for word in prefix_dict:
-        if (word[-num:] + sufix) in sufix_dict: res.add(word[-num:])
+        if (word[-num:] + suffix) in suffix_dict: res.add(word[-num:])
     return res
 
 
 def render(question: str):
     question = question.lower().strip()
     prefix = question.split('(')[0]
-    sufix = question.split(')')[-1]
-    num = len(question) - len(prefix) - len(sufix) - 2
-    return dict(num=num, prefix=prefix, sufix=sufix)
+    suffix = question.split(')')[-1]
+    num = len(question) - len(prefix) - len(suffix) - 2
+    return dict(num=num, prefix=prefix, sufix=suffix)
 
 
 def find_word(*args, dictionary):
